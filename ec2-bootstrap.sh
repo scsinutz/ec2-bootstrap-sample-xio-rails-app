@@ -77,6 +77,7 @@ This email message was generated on the following EC2 instance:
     Region:		$REGION
     Uptime:		$UPTIME
     IP:			$IPV4
+    xio-app:		http://$IPV4
 
     Bootstrap script output is logged to /var/log/user-data.log
 
