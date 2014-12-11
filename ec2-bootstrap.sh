@@ -47,6 +47,7 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 EOF
 
+#installing postfix non-interactive
 debconf-set-selections <<< "postfix postfix/mailname string $HOSTNAME.$DOMAIN"
 debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
 apt-get install postfix -y
