@@ -61,7 +61,7 @@ INTYPE=$(/usr/bin/curl -s http://169.254.169.254/latest/meta-data/instance-type)
 INID=$(/usr/bin/curl -s http://169.254.169.254/latest/meta-data/instance-id)
 REGION=$(/usr/bin/curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone)
 IPV4=$(/usr/bin/curl -s http://169.254.169.254/latest/meta-data/public-ipv4)
-EMAIL=patrick.mcdonald@gmail.com
+EMAIL="<your email address>"
 
 /usr/sbin/sendmail -oi -t -f $EMAIL <<EOM
 From: $EMAIL
