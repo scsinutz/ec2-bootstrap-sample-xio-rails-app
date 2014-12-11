@@ -1,4 +1,4 @@
-An EC2 Bootstrap script that will install salt-stack in master-less mode and then install and configure sample-xio-app.
+An EC2 Bootstrap script that will install salt-stack in master-less mode and then install and configure sample-xio-rails-app.
 
 It's been tested with AMI: ami-c5180880 which runs Ubuntu 14.04
 
