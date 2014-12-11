@@ -47,7 +47,6 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 EOF
 
-#send email to notify bootstrap is complete
 debconf-set-selections <<< "postfix postfix/mailname string $HOSTNAME.$DOMAIN"
 debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
 apt-get install postfix -y
@@ -55,6 +54,7 @@ apt-get install postfix -y
 #bootstrap application via salt
 salt-call state.sls bootstrap_application
 
+#send email to notify bootstrap is complete
 UPTIME=$(uptime)
 SECGROUP=$(/usr/bin/curl -s http://169.254.169.254/latest/meta-data/security-groups/)
 INTYPE=$(/usr/bin/curl -s http://169.254.169.254/latest/meta-data/instance-type)
@@ -77,7 +77,7 @@ This email message was generated on the following EC2 instance:
     Uptime:		$UPTIME
     IP:			$IPV4
 
-    Boot strap script output is logged to /var/log/user-data.log
+    Bootstrap script output is logged to /var/log/user-data.log
 
 EOM
 
